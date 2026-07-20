@@ -1,0 +1,179 @@
+# ============================================================
+# DevFlow PMS - Repository-wide .gitattributes
+# 저장소 전체의 줄바꿈과 바이너리 파일 처리를 통일한다.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# 기본 텍스트 파일
+#
+# Git 저장소 내부: LF
+# 일반 소스 파일 체크아웃: LF
+# Windows 실행 스크립트만 아래에서 CRLF로 재정의
+# ------------------------------------------------------------
+
+* text=auto eol=lf
+
+
+# ------------------------------------------------------------
+# Windows 실행 스크립트
+# ------------------------------------------------------------
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+
+# ------------------------------------------------------------
+# Unix / Gradle 실행 스크립트
+# ------------------------------------------------------------
+
+*.sh text eol=lf
+**/gradlew text eol=lf
+
+
+# ------------------------------------------------------------
+# Java / Gradle / Spring
+# ------------------------------------------------------------
+
+*.java text eol=lf
+*.gradle text eol=lf
+*.kts text eol=lf
+*.properties text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+
+# ------------------------------------------------------------
+# Oracle / Database
+# ------------------------------------------------------------
+
+*.sql text eol=lf
+*.pks text eol=lf
+*.pkb text eol=lf
+*.pls text eol=lf
+
+
+# ------------------------------------------------------------
+# React / TypeScript / JavaScript
+# ------------------------------------------------------------
+
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+
+*.json text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.sass text eol=lf
+*.less text eol=lf
+*.html text eol=lf
+*.svg text eol=lf
+
+
+# ------------------------------------------------------------
+# 설정 및 문서 텍스트
+# ------------------------------------------------------------
+
+*.md text eol=lf
+*.txt text eol=lf
+*.conf text eol=lf
+*.ini text eol=lf
+*.lock text eol=lf
+*.mdj text eol=lf
+
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.editorconfig text eol=lf
+.prettierrc text eol=lf
+
+Dockerfile text eol=lf
+*.dockerignore text eol=lf
+
+LICENSE text eol=lf
+
+
+# ------------------------------------------------------------
+# 이미지
+# ------------------------------------------------------------
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.webp binary
+*.ico binary
+*.tif binary
+*.tiff binary
+
+
+# ------------------------------------------------------------
+# 폰트
+# ------------------------------------------------------------
+
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.eot binary
+
+
+# ------------------------------------------------------------
+# Java 및 실행 바이너리
+# ------------------------------------------------------------
+
+*.jar binary
+*.class binary
+*.war binary
+*.ear binary
+
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+
+
+# ------------------------------------------------------------
+# Office 및 PDF 문서
+# ------------------------------------------------------------
+
+*.pdf binary
+
+*.doc binary
+*.docx binary
+
+*.xls binary
+*.xlsx binary
+
+*.ppt binary
+*.pptx binary
+
+
+# ------------------------------------------------------------
+# 압축파일
+# ------------------------------------------------------------
+
+*.zip binary
+*.7z binary
+*.rar binary
+*.tar binary
+*.gz binary
+*.tgz binary
+
+
+# ------------------------------------------------------------
+# 미디어
+# ------------------------------------------------------------
+
+*.mp3 binary
+*.wav binary
+*.ogg binary
+*.mp4 binary
+*.avi binary
+*.mov binary
+*.mkv binary

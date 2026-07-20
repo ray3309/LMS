@@ -1,0 +1,217 @@
+# ============================================================
+# DevFlow PMS - Repository-wide .gitignore
+# 저장소 루트에서 이 파일 하나만 사용한다.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# 1. 환경변수 및 민감정보
+# ------------------------------------------------------------
+
+# 모든 하위 경로의 .env 계열 파일 제외
+**/.env*
+
+# 예제 환경변수 파일은 Git에 포함
+!**/.env.example
+!**/.env.*.example
+
+
+# ------------------------------------------------------------
+# 2. Spring Boot 로컬·비밀 설정
+# application.yml은 Git에 포함한다.
+# ------------------------------------------------------------
+
+**/src/main/resources/application-local.yml
+**/src/main/resources/application-local.yaml
+
+**/src/main/resources/application-*.local.yml
+**/src/main/resources/application-*.local.yaml
+
+**/src/main/resources/application-secret.yml
+**/src/main/resources/application-secret.yaml
+**/src/main/resources/application-secrets.yml
+**/src/main/resources/application-secrets.yaml
+
+
+# ------------------------------------------------------------
+# 3. 실제 환경변수 등록 스크립트
+# ------------------------------------------------------------
+
+# 실제 DB·메일·JWT 정보가 들어 있는 로컬 스크립트
+/env_script/01_set_backend_env_user.bat
+
+# 앞으로 개인용 스크립트는 *.local.bat 형식으로 작성
+/env_script/*.local.bat
+
+# 예제 파일은 Git에 포함 가능
+!/env_script/*.example.bat
+!/env_script/README_ENV_SETUP.md
+
+
+# ------------------------------------------------------------
+# 4. IntelliJ IDEA
+# ------------------------------------------------------------
+
+**/.idea/
+**/*.iml
+**/*.iws
+**/*.ipr
+
+
+# ------------------------------------------------------------
+# 5. Eclipse / STS
+# ------------------------------------------------------------
+
+**/.metadata/
+**/.apt_generated/
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings/
+**/.springBeans
+**/.sts4-cache/
+
+
+# ------------------------------------------------------------
+# 6. VS Code
+# ------------------------------------------------------------
+
+**/.vscode/
+
+
+# ------------------------------------------------------------
+# 7. Java / Gradle 빌드 산출물 및 캐시
+# ------------------------------------------------------------
+
+**/.gradle/
+**/build/
+**/target/
+**/out/
+**/bin/
+
+*.class
+*.jar
+*.war
+*.ear
+*.hprof
+
+# Gradle Wrapper JAR는 반드시 Git에 포함
+!**/gradle/wrapper/gradle-wrapper.jar
+
+# 소스 패키지명이 build 또는 bin인 경우는 허용
+!**/src/main/**/build/
+!**/src/test/**/build/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+
+# ------------------------------------------------------------
+# 8. Node.js / React / Vite
+# ------------------------------------------------------------
+
+**/node_modules/
+
+/frontend/.vite/
+/frontend/dist/
+/frontend/dist-ssr/
+/frontend/coverage/
+/frontend/.cache/
+
+/frontend/*.tsbuildinfo
+/frontend/node_modules.bin-*
+
+**/.pnp
+**/.pnp.js
+**/.yarn-integrity
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+
+# ------------------------------------------------------------
+# 9. 실행 중 생성되는 업로드·로그 파일
+# ------------------------------------------------------------
+
+**/upload/
+**/uploads/
+**/logs/
+
+*.log
+*.log.*
+*.tmp
+*.temp
+*.pid
+*.seed
+
+
+# ------------------------------------------------------------
+# 10. Docker·Oracle 로컬 데이터
+# ------------------------------------------------------------
+
+/docker-data/
+/oradata/
+
+
+# ------------------------------------------------------------
+# 11. 테스트 및 도구 캐시
+# ------------------------------------------------------------
+
+**/.pytest_cache/
+**/.eslintcache
+**/.stylelintcache
+
+
+# ------------------------------------------------------------
+# 12. 운영체제 생성 파일
+# ------------------------------------------------------------
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+
+# ------------------------------------------------------------
+# 13. 편집기 임시·백업·충돌 파일
+# ------------------------------------------------------------
+
+*.swp
+*.swo
+*~
+~$*
+
+*.bak
+*.orig
+*.rej
+
+
+# ------------------------------------------------------------
+# 아래 파일은 제외하지 않는다.
+#
+# backend/its/src/main/resources/application.yml
+# backend/its/build.gradle
+# backend/its/settings.gradle
+# backend/its/gradlew
+# backend/its/gradlew.bat
+# backend/its/gradle/wrapper/*
+#
+# frontend/package.json
+# frontend/yarn.lock
+# frontend/vite.config.ts
+# frontend/src/*
+# frontend/public/*
+#
+# Dockerfile
+# docker-compose.yml
+# README.md
+# Document/*
+# backend/db/*
+# ------------------------------------------------------------
+/backend/db
